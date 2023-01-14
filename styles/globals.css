@@ -11,11 +11,11 @@ body {
 }
 
 body {
- background-color: #cccaca;
+ background-color: rgb(21, 20, 20) !important;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
+  color: rgb(236, 234, 234) !important;
 }
 
 a {
