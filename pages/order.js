@@ -1,60 +1,170 @@
-import Head from "next/head";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Heading } from "@chakra-ui/react";
 import {
-  Image,
-  chakra,
-  Stack,
-  Icon,
-  Box,
-  Header,
-  Button,
-  Center,
-  Spacer,
+  Container,
   Flex,
+  Box,
+  Heading,
   Text,
-} from "@chakra-ui/react";
+  IconButton,
+  Button,
+  VStack,
+  HStack,
+  Wrap,
+  WrapItem,
+  FormControl,
+  FormLabel,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  Textarea,
+} from '@chakra-ui/react';
+import {
+  MdPhone,
+  MdEmail,
+  MdLocationOn,
+  MdFacebook,
+  MdOutlineEmail,
+} from 'react-icons/md';
+import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
+import Navigation from '../components/navigation';
 
-export default function Order() {
+export default function contact() {
   return (
     <>
-      <Flex alignItems={"center"} gap={"30px"} py="2rem" paddingX={"6rem"}>
-        <Text fontWeight={"bold"} fontSize={"xl"}>
-          Launchpad Aerial Photography
-        </Text>
-        <Spacer />
-        <Text className="nav-link" fontSize={"lg"}>
-          Home
-        </Text>
-        <Text className="nav-link" ml="1rem" fontSize={"lg"}>
-          Order Services
-        </Text>
+      <Navigation />
+    <Container  maxW="full" mt={0} centerContent overflow="hidden">
+      <Flex>
+        <Box
+          bg="#02054B"
+          color="white"
+          borderRadius="lg"
+          m={{ sm: 4, md: 16, lg: 10 }}
+          p={{ sm: 5, md: 5, lg: 16 }}>
+          <Box p={4}>
+            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+              <WrapItem>
+                <Box>
+                  <Heading>Contact</Heading>
+                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                    Fill up the form below to contact
+                  </Text>
+                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <VStack pl={0} spacing={3} alignItems="flex-start">
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="200px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: '2px solid #1C6FEB' }}
+                        leftIcon={<MdPhone color="#1970F1" size="20px" />}>
+                        +91-988888888
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="200px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: '2px solid #1C6FEB' }}
+                        leftIcon={<MdEmail color="#1970F1" size="20px" />}>
+                        hello@abc.com
+                      </Button>
+                      <Button
+                        size="md"
+                        height="48px"
+                        width="200px"
+                        variant="ghost"
+                        color="#DCE2FF"
+                        _hover={{ border: '2px solid #1C6FEB' }}
+                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}>
+                        Karnavati, India
+                      </Button>
+                    </VStack>
+                  </Box>
+                  <HStack
+                    mt={{ lg: 10, md: 10 }}
+                    spacing={5}
+                    px={5}
+                    alignItems="flex-start">
+                    <IconButton
+                      aria-label="facebook"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: '#0D74FF' }}
+                      icon={<MdFacebook size="28px" />}
+                    />
+                    <IconButton
+                      aria-label="github"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: '#0D74FF' }}
+                      icon={<BsGithub size="28px" />}
+                    />
+                    <IconButton
+                      aria-label="discord"
+                      variant="ghost"
+                      size="lg"
+                      isRound={true}
+                      _hover={{ bg: '#0D74FF' }}
+                      icon={<BsDiscord size="28px" />}
+                    />
+                  </HStack>
+                </Box>
+              </WrapItem>
+              <WrapItem>
+                <Box bg="white" borderRadius="lg">
+                  <Box m={8} color="#0B0E3F">
+                    <VStack spacing={5}>
+                      <FormControl id="name">
+                        <FormLabel>Your Name</FormLabel>
+                        <InputGroup borderColor="#E0E1E7">
+                          <InputLeftElement
+                            pointerEvents="none"
+                            children={<BsPerson color="gray.800" />}
+                          />
+                          <Input type="text" size="md" />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="name">
+                        <FormLabel>Mail</FormLabel>
+                        <InputGroup borderColor="#E0E1E7">
+                          <InputLeftElement
+                            pointerEvents="none"
+                            children={<MdOutlineEmail color="gray.800" />}
+                          />
+                          <Input type="text" size="md" />
+                        </InputGroup>
+                      </FormControl>
+                      <FormControl id="name">
+                        <FormLabel>Message</FormLabel>
+                        <Textarea
+                          borderColor="gray.300"
+                          _hover={{
+                            borderRadius: 'gray.300',
+                          }}
+                          placeholder="I would like to know more about Launchpad. How much does it cost for a 1 acre property, 2 minute aerial video?"
+                        />
+                      </FormControl>
+                      <FormControl id="name" float="right">
+                        <Button
+                          variant="solid"
+                          bg="#0D74FF"
+                          color="white"
+                          _hover={{}}>
+                          Send Message
+                        </Button>
+                      </FormControl>
+                    </VStack>
+                  </Box>
+                </Box>
+              </WrapItem>
+            </Wrap>
+          </Box>
+        </Box>
       </Flex>
-
-      <Heading mt={"3rem"} fontSize="5xl" textAlign={"center"}>
-        Order Services
-      </Heading>
-      <Text mt={"10px"} textAlign={"center"}>
-        Please fill out the form below to order services. We will get back to
-        you as soon as possible.
-      </Text>
-
-      <br />
-      <Center>
-        <Flex>
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSecOUrPqTnh7pgzUbJx0rNNIWRl3lXkEVFAgtSizT5VV5TBqA/viewform?embedded=true"
-            width="640"
-            height="1000"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0"
-          >
-            Loading…
-          </iframe>
-        </Flex>
-      </Center>
+    </Container>
     </>
   );
 }

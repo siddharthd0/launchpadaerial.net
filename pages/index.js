@@ -1,7 +1,5 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import { Heading } from "@chakra-ui/react";
 import {
   Image,
   chakra,
@@ -19,22 +17,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <Flex alignItems={"center"} gap={"30px"} py="2rem" paddingX={"6rem"}>
-        <Text fontWeight={"bold"} fontSize={"xl"}>
-          Launchpad Aerial Photography
-        </Text>
-        <Spacer />
-        <Link href="./">
-        <Text className="nav-link" fontSize={"lg"}>
-          Home
-        </Text>
-        </Link>
-        <Link href="order">
-        <Text className="nav-link" ml="1rem" fontSize={"lg"}>
-          Order Services
-        </Text>
-        </Link>
-      </Flex>
+    
       <Box px={8} py={24} mx="auto">
         <Box
           w={{
@@ -62,7 +45,7 @@ export default function Home() {
             }}
             color="gray.100"
           >
-            We take {""}
+            The
             <Text
               display={{
                 base: "block",
@@ -73,9 +56,9 @@ export default function Home() {
               bgGradient="linear(to-r, green.400,purple.500)"
               fontWeight="extrabold"
             >
-              premium aerial photos
+          {" "}    Premium
             </Text>{" "}
-            for you.
+           Aerial Photgraphy Agency For You.
           </chakra.h1>
           <chakra.p
             margin={"auto"}
@@ -91,8 +74,8 @@ export default function Home() {
             }}
             color="gray.200"
           >
-            Launchpad Aerial Photography can help you get the best aerial photos
-            for you or your business in the Treasure Valley!
+            Launchpad Aerial will provide you with the best aerial photography
+            services in the industry.
           </chakra.p>
           <Stack
             direction={{
